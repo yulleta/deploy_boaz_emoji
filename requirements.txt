@@ -1,0 +1,6 @@
+pandas
+transformers
+faiss-cpu
+streamlit
+openai
+nltk
