@@ -15,8 +15,10 @@ df = pd.read_csv('emoji_vector_unicode.csv')
 vector_set = np.array(vector_set)
 vector_set = vector_set.astype('float32')
 
+print("loading model...")
 tokenizer = AutoTokenizer.from_pretrained("augustinLib/text-emoji-encoder-MSMARCO")
 model = AutoModelForSequenceClassification.from_pretrained("augustinLib/text-emoji-encoder-MSMARCO")
+print("model loading success")
 
 def inference(save_list):
   input_sequence = copy.deepcopy(save_list)
@@ -37,7 +39,7 @@ def inference(save_list):
 
   faiss_index.add_with_ids(vector_set, np.arange(len(vector_set)))
 
-  Distance, Index = faiss_index.search(query_vector, 5)
+  Distance, Index = faiss_index.search(query_vector, 1)
   # emoji_stacks.append(df.loc[Index[0], :])
   # return_df = pd.concat(emoji_stacks, axis=0).reset_index(drop=True)
   
