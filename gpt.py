@@ -20,7 +20,7 @@ nltk.download('averaged_perceptron_tagger')
 
 client = OpenAI(
     # defaults to os.environ.get("OPENAI_API_KEY")
-    api_key= API_KEY,
+    api_key= st.secrets["API_KEY"],
 )
 
 def gpt_answ(text):
