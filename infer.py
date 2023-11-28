@@ -37,7 +37,7 @@ def inference(save_list):
 
   faiss_index.add_with_ids(vector_set, np.arange(len(vector_set)))
 
-  Distance, Index = faiss_index.search(query_vector, 10)
+  Distance, Index = faiss_index.search(query_vector, 5)
   # emoji_stacks.append(df.loc[Index[0], :])
   # return_df = pd.concat(emoji_stacks, axis=0).reset_index(drop=True)
   
