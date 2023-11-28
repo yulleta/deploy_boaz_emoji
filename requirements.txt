@@ -5,4 +5,4 @@ streamlit
 openai
 nltk
 translate
-pytorch
+torch
