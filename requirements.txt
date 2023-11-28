@@ -4,4 +4,4 @@ faiss-cpu
 streamlit
 openai
 nltk
-translator
+translate
